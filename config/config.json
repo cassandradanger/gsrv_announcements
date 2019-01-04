@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "gsrv-announcements-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/gsrvAnnouncements/GsrvAnnouncementsWebPart.js",
+          "manifest": "./src/webparts/gsrvAnnouncements/GsrvAnnouncementsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "GsrvAnnouncementsWebPartStrings": "lib/webparts/gsrvAnnouncements/loc/{locale}.js"
+  }
+}

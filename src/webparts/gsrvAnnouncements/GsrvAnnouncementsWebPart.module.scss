@@ -1,0 +1,68 @@
+body{
+  font-family: 'Trefoil sans'
+}
+
+.mainAN{
+  width: 300px;
+}
+.titleAN{
+  color: #57b372;
+  font-size: 13pt;
+  font-weight: 600;
+  margin-bottom: -5px !important;
+  text-align: center;
+  display: inline-block;
+}
+.contentAN{
+  padding: 10px 10px 10px 20px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  width: 765px;
+  height: 65px;
+  line-height: 10px;
+  overflow: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.imgAN{
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+}
+.liAN{
+  display: inline;
+  list-style: none;
+}
+.vertLineAN{
+  height: 65px;
+  width: 1px;
+  display: inline-block;
+  margin: 0 10px;
+  border-right: 1px solid lightgray;
+}
+.personWrapperAN{
+  display: inline-block;
+}
+.imageAN{
+  border: 1px solid black;
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+.nameAN{
+  font-weight: 600;
+  font-size: 12pt;
+}
+.positionAN{
+  font-size: 9pt;
+  margin-bottom: 17px;
+  margin-top: 8px;
+}
+.extensionAN{
+  font-size: 9pt;
+  font-style: italic;
+}
+

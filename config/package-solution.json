@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "gsrv-announcements-client-side-solution",
+    "id": "af21fbd7-c908-48dd-874a-93f06258c94f",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/gsrv-announcements.sppkg"
+  }
+}
