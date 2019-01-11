@@ -6,15 +6,20 @@ body{
   width: 300px;
 }
 .titleAN{
-  color: #57b372;
-  font-size: 13pt;
+  color: black !important;
   font-weight: 600;
-  margin-bottom: -5px !important;
   text-align: center;
   display: inline-block;
+  margin: 0 !important;
+  padding-bottom: 5px;
 }
 .contentAN{
   padding: 0px 10px 0px 10px; 
   width: 500px;
   border-bottom: 1px solid #57b372;
+}
+.gsrv_logo{
+  background-image: url('./gsrv_logo.jpg');
+  width: 300px;
+  height: 150px;
 }

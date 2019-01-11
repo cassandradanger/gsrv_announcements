@@ -79,40 +79,51 @@ export default class GsrvAnnouncementsWebPart extends BaseClientSideWebPart<IGsr
    }
 
    private _renderList(items: ISPList[]): void {
-    let html: string = '';
-    var siteURL = "";
-    var announcementsListName =  "";
-    var date = new Date();
-    var strToday = "";
-    var mm = date.getMonth()+1;
-    var dd = date.getDate();
-    var yyyy = date.getFullYear();
-    if(dd < 10){
-      dd = 0 + dd;
+     if (items.length === 0){
+      var secondHtml = `<p class=${styles.gsrv_logo}></p>`
+      const listContainer: Element = this.domElement.querySelector('#ListItems');  
+      listContainer.innerHTML = secondHtml;  
+     } else {
+      let html: string = '';
+      html += `
+        <h3 class=${styles.titleAN}>
+          Team Announcements
+        </h3>`
+
+      var siteURL = "";
+      var announcementsListName =  "";
+      var date = new Date();
+      var strToday = "";
+      var mm = date.getMonth()+1;
+      var dd = date.getDate();
+      var yyyy = date.getFullYear();
+      if(dd < 10){
+        dd = 0 + dd;
+      }
+
+      if(mm < 10){
+        mm = 0 + mm;
+      }
+
+      strToday = mm + "/" + dd + "/" + yyyy;
+      items.forEach((item: ISPList) => {
+        siteURL = item.DeptURL;
+        announcementsListName = item.AnncURL;
+
+        const w = new Web("https://girlscoutsrv.sharepoint.com" + siteURL);
+        
+        // then use PnP to query the list
+        w.lists.getByTitle(announcementsListName).items.filter("Expires ge '" + strToday + "'").top(1)
+        .get()
+        .then((data) => {
+          html += `
+          <div>${data[0].Body}</div`;
+
+          const listContainer: Element = this.domElement.querySelector('#ListItems');  
+          listContainer.innerHTML = html;  
+        }).catch(e => { console.error(e); });
+      });
     }
-
-    if(mm < 10){
-      mm = 0 + mm;
-    }
-
-    strToday = mm + "/" + dd + "/" + yyyy;
-    items.forEach((item: ISPList) => {
-      siteURL = item.DeptURL;
-      announcementsListName = item.AnncURL;
-
-      const w = new Web("https://girlscoutsrv.sharepoint.com" + siteURL);
-      
-      // then use PnP to query the list
-      w.lists.getByTitle(announcementsListName).items.filter("Expires ge '" + strToday + "'").top(1)
-      .get()
-      .then((data) => {
-        console.log(data);
-        html += `
-        <div>${data[0].Body}</div`
-        const listContainer: Element = this.domElement.querySelector('#ListItems');
-        listContainer.innerHTML = html;
-      }).catch(e => { console.error(e); });
-    });
   }
 
   // this is required to use the SharePoint PnP shorthand REST CALLS
