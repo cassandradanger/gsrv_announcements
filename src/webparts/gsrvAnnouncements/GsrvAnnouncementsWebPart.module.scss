@@ -12,6 +12,10 @@ body{
   display: inline-block;
   margin: 0 !important;
   padding-bottom: 5px;
+  a{
+    text-decoration: none;
+    color: black;
+  }
 }
 .contentAN{
   padding: 0px 10px 0px 10px; 

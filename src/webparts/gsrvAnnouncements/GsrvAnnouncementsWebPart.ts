@@ -87,7 +87,7 @@ export default class GsrvAnnouncementsWebPart extends BaseClientSideWebPart<IGsr
       let html: string = '';
       html += `
         <h3 class=${styles.titleAN}>
-          Team Announcements
+          <a href="https://girlscoutsrv.sharepoint.com/${userDept}/Team%20Announcements">Team Announcements</a>
         </h3>`
 
       var siteURL = "";
